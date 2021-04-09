@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import Nav from '../components/NavBar';
+import Footer from '../components/Footer';
 import { Redirect } from 'react-router-dom';
 
 class ProfilePage extends React.Component {
     render() {
         return (
-            <Nav />
+            <div>
+                <Nav />
+                <Footer />
+            </div>
+            
         );
     }
 
