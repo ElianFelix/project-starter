@@ -98,16 +98,16 @@ router.get('/:id', passport.isAuthenticated(), async (req, res) => {
 
 
 
-// ./api/posts/like/:id/:userName
-// pass the post id and the userName of the user that is liking the post, to increment the like in that post. 
+// ./api/posts/like/:id
+// pass the post id as a query param and the userName as an attribute of the body json obj, to increment the like in that post. 
 // If this endpoint is hit again a second time, it will unlike and decrement the likes count. 
 // It will keep toggling for infinite clicks
 // if the user currently dislikes the post and then hits like, the dislike will be decremented and unmarked. and like will be incremented and marked
 //user can either like or dislike but not both 
 
-router.put('/like/:id/:userName', passport.isAuthenticated(), async (req, res) => {
+router.put('/like/:id/', passport.isAuthenticated(), async (req, res) => {
     const id = req.params.id;
-    const userName = req.params.userName;
+    const userName = req.body.userName
     // console.log(userName)
 
     let post = await Post.findByPk(parseInt(id, 10))
@@ -149,14 +149,14 @@ router.put('/like/:id/:userName', passport.isAuthenticated(), async (req, res) =
           
   });
 
-// ./api/posts/dislike/:id/:userName
-// use this endpoint and pass the post id and the userName to increment the dislike value by one.
+// ./api/posts/dislike/:id
+// use this endpoint and pass the post id as query param and the userName in the body obj to increment the dislike value by one.
 // if this endpoint is hit again it will decrement the dislike and keep toggling it for more clicks. 
 // if the user currently likes the post and then hits disllike, the like would be decremented and marked as not liked.
 //user can either like or dislike but not both 
-router.put('/dislike/:id/:userName', passport.isAuthenticated(), async (req, res) => {
+router.put('/dislike/:id', passport.isAuthenticated(), async (req, res) => {
   const id = req.params.id;
-  const userName = req.params.userName;
+  const userName = req.body.userName;
 
   let post = await Post.findByPk(parseInt(id, 10))
   if(!post) {
@@ -196,14 +196,19 @@ router.put('/dislike/:id/:userName', passport.isAuthenticated(), async (req, res
     }
 });
 
-// ./api/posts/getByUser/:userName
+// ./api/posts/getByUser
+// pass the userName in the request body 
 // call this endpoint with the userName and get an array of all posts made by that user. 
 // the array holds objects that have the properties post, media and location. 
 // in the following format [{"post": {post data}, "media": {media data}, "location": {location data}}]
 router.get('/getByUser/:userName', passport.isAuthenticated(), async (req,res) => {
-  const { userName } = req.params;
+  const  userName  = req.params.userName;
+  console.log(userName)
   const user = await User.findByPk(userName);
+  console.log(user)
+  // res.json(user)
   const posts = await user.getPosts();
+  // const posts = await Post.findAll({where:{fkUserName : userName}});
 
   let postMedLocArr =[]
   for(let i=0; i<posts.length; i++){
