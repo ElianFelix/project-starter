@@ -28,7 +28,7 @@ function ProfilePage(props) {
     return (
         <div className='profile-info'>
             <div className="p-5 row g-3">
-                <div className="col-6">
+                <div className="col-6 text-white">
                     <input type="file" accept="image/*" onChange={handleImageUpload} ref={imageUploader} style={{ display: "none" }} />
                     <div onClick={() => imageUploader.current.click()}>
                         <img ref={uploadedImage} src={props.info.profilePic} className="profilePic" />
@@ -132,9 +132,9 @@ class Profile extends React.Component {
                     <ProfilePage info={this.state.userInfo} />
                     <div className='posts'>
                         {
-                            this.state.posts.map((post, id) => {
-
-                                return <div className='d-flex justify-content-center text-center' key={id}><Postcard /></div>
+                            this.state.posts.map((postInfo, id) => {
+                                console.log(postInfo);
+                               return <div className='d-flex justify-content-center text-center' key={id}><Postcard post={postInfo.post} media={postInfo.media} location={postInfo.location}/></div>
                             })
                         }
                     </div>
