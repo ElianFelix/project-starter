@@ -4,6 +4,58 @@ import './Postcard.css'
 
 
 function Postcard({ post, media, location, key }) {
+
+  const mediaLink = media[0].link;
+  const myStyle = {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gridTemplateRows: "repeat(5, 0.5fr)",
+    alignItems: "center",
+    backgroundImage: `url("${mediaLink}")`,
+    backgroundSize: "cover",
+    backgroundPosition: "center"
+  }
+
+  console.log(post);
+  console.log(media[0]);
+  console.log(location);
+  
+
+  return (
+    <div className="container-post" style={{backgroundColor: "whitesmoke"}}>
+      <div className="row">
+        <div className="col-8">
+          <img src={mediaLink} className="post-img"/>
+        </div>
+        <div className="col text-secondary">
+          <h4>{post.title}</h4>
+          <div className="post-loc">
+            {location.city}, {location.state}
+          </div>
+          <div className="post-text">
+            {post.body}
+          </div>
+        </div>
+      </div>
+
+      <div className="row text-secondary align-items-center">
+        <div className="col-3 float-left">
+          Likes: {post.likes}
+        </div>
+        <div className="col-3">
+          Dislikes: {post.dislikes}
+        </div>
+        <div className="col">
+          <div>
+            Created By: {post.fkUserName}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  );
+
+  /*
   return (
     <div className="col-10 col-md-8 col-lg-7 p-0 mx-0 my-4  ">
       <div className="post-container shadow row">
@@ -57,6 +109,7 @@ function Postcard({ post, media, location, key }) {
       </div>
     </div>
   );
+  */
 }
 
 export default Postcard;
