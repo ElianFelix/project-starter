@@ -37,7 +37,7 @@ describe('Testing the Models', () => {
     })
 
     test('get all posts', async () => {
-    expect(await getAllPosts()).toEqual(["Independence Day", "Men in Black II", "Seven Pounds", "Eagle Eye", "Tropic Thunder", "Awesome Title"]);
+    expect(await getAllPosts()).toEqual(["Prospect Park", "Space Needle", "Liberty Science Center", "Barclays Center", "Lincoln Memorial", "Awesome Title"]);
     })
 
     test('delete post you added', async () => {
