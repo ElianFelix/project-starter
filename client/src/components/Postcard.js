@@ -1,59 +1,119 @@
 import React from 'react';
 //import { Link } from 'react-router-dom';
 import './Postcard.css'
+import auth from '../services/auth';
 
+class Postcard extends React.Component{
 
-function Postcard({ post, media, location, key }) {
+  constructor(props) {
+    super(props);
+    this.state = {
+      like: this.props.post.likes,
+      dislike: 0
+    }
 
-  const mediaLink = media[0].link;
-  const myStyle = {
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    gridTemplateRows: "repeat(5, 0.5fr)",
-    alignItems: "center",
-    backgroundImage: `url("${mediaLink}")`,
-    backgroundSize: "cover",
-    backgroundPosition: "center"
+    this.handleClickLike = this.handleClickLike.bind(this);
+    this.handleClickDislike = this.handleClickDislike.bind(this);
   }
 
-  console.log(post);
-  console.log(media[0]);
-  console.log(location);
-  
+  handleClickLike(event, reqOp, id){
+     console.log(id);
+    fetch('./api/posts/like/'+id, reqOp)
+      .then(response => response.json())
+      .then(data => {
+        //console.log(data)
+        const newLike = data.likes;
+        const newDislike = data.dislikes;
+        this.setState({
+          like: newLike,
+          dislike: newDislike
+        })
+      })
+      .catch(err => console.log(err));
 
-  return (
-    <div className="container-post" style={{backgroundColor: "whitesmoke"}}>
-      <div className="row">
-        <div className="col-8">
-          <img src={mediaLink} className="post-img"/>
-        </div>
-        <div className="col text-secondary">
-          <h4>{post.title}</h4>
-          <div className="post-loc">
-            {location.city}, {location.state}
-          </div>
-          <div className="post-text">
-            {post.body}
-          </div>
-        </div>
-      </div>
-
-      <div className="row text-secondary align-items-center">
-        <div className="col-3 float-left">
-          Likes: {post.likes}
-        </div>
-        <div className="col-3">
-          Dislikes: {post.dislikes}
-        </div>
-        <div className="col">
-          <div>
-            Created By: {post.fkUserName}
-          </div>
-        </div>
-      </div>
-    </div>
     
-  );
+  }
+
+  handleClickDislike(event, reqOp, id){
+    fetch('./api/posts/dislike/'+id, reqOp)
+      .then(response => response.json())
+      .then(data => {
+        //console.log(data)
+        const newLike = data.likes;
+        const newDislike = data.dislikes;
+        this.setState({
+          like: newLike,
+          dislike: newDislike
+        })
+      })
+      .catch(err => console.log(err));
+  }
+
+  componentDidMount(){
+    const likes = this.props.post.likes;
+    const dislikes = this.props.post.dislikes
+    console.log(likes);
+    console.log(dislikes);
+    this.setState({
+      like: likes,
+      dislike: dislikes
+    })
+  }
+
+  render(){
+
+    const location = this.props.location;
+    const post = this.props.post;
+    const mediaLink = this.props.media[0].link;
+    const loggedInUserName = (auth.user).userName;
+    const likes = this.state.like;
+    const dislikes = this.state.dislike;
+    //console.log(this.props.post);
+    //console.log(mediaLink);
+    //console.log(location);
+    
+    const requestOptions = {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userName: loggedInUserName })
+    };
+
+    return (
+      <div className="container-post" style={{backgroundColor: "whitesmoke"}}>
+        <div className="row">
+          <div className="col-8">
+            <img src={mediaLink} className="post-img"/>
+          </div>
+          <div className="col text-secondary">
+            <h4>{post.title}</h4>
+            <div className="post-loc">
+              {location.city}, {location.state}
+            </div>
+            <div className="post-text">
+              {post.body}
+            </div>
+          </div>
+        </div>
+
+        <div className="row text-secondary align-items-center">
+          <div className="col-3 float-left">
+            <button type="button" class="btn btn-primary" onClick={ (e) => this.handleClickLike(e, requestOptions, post.id) } >Like</button>
+            : {likes}
+          </div>
+          <div className="col-3">
+            <button type="button" class="btn btn-primary" onClick={ (e) => this.handleClickDislike(e, requestOptions, post.id) } >Dislike</button>
+            : {dislikes}
+          </div>
+          <div className="col">
+            <div>
+              Created By: {post.fkUserName}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    );
+  }
 
   /*
   return (
