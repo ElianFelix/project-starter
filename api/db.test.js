@@ -37,7 +37,11 @@ describe('Testing the Models', () => {
     })
 
     test('get all posts', async () => {
-    expect(await getAllPosts()).toEqual(["Independence Day", "Men in Black II", "Seven Pounds", "Eagle Eye", "Tropic Thunder", "Awesome Title"]);
+    expect(await getAllPosts()).toEqual(["Awesome woods and creek in Brooklyn (Fake Data)",
+       "Amazing place to see the sunset at Seattle (Fake Data)",
+       "Awesome camping area on the mountains of New Jersey (Fake Data)",
+       "Cool mural in the City of New York (Fake Data)",
+       "Cool little hidden resturant (Fake Data)",]);
     })
 
     test('delete post you added', async () => {
