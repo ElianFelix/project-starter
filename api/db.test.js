@@ -20,35 +20,35 @@ describe('Testing the Models', () => {
       return seed();
     })
 
-    test('insert new location', async () => {
-        await insertNewLocation();
-        locations = await Location.findAll();
-        expect(locations.length).toBe(6);
-    })
+    // test('insert new location', async () => {
+    //     await insertNewLocation();
+    //     locations = await Location.findAll();
+    //     expect(locations.length).toBe(6);
+    // })
     
-    test('insert new Post', async () => {
-        await insertNewPost();
-        posts = await Post.findAll();
-        expect(posts.length).toBe(6);
-    })
+    // test('insert new Post', async () => {
+    //     await insertNewPost();
+    //     posts = await Post.findAll();
+    //     expect(posts.length).toBe(6);
+    // })
     
-    test('get Location ID=2', async () => {
-    expect(await getLocationWithId2()).toEqual({state : "New Jersey", city : "Jersey City"});
-    })
+    // test('get Location ID=2', async () => {
+    // expect(await getLocationWithId2()).toEqual({state : "New Jersey", city : "Jersey City"});
+    // })
 
-    test('get all posts', async () => {
-    expect(await getAllPosts()).toEqual(["Awesome woods and creek in Brooklyn (Fake Data)",
-       "Amazing place to see the sunset at Seattle (Fake Data)",
-       "Awesome camping area on the mountains of New Jersey (Fake Data)",
-       "Cool mural in the City of New York (Fake Data)",
-       "Cool little hidden resturant (Fake Data)",]);
-    })
+    // test('get all posts', async () => {
+    // expect(await getAllPosts()).toEqual(["Awesome woods and creek in Brooklyn (Fake Data)",
+    //    "Amazing place to see the sunset at Seattle (Fake Data)",
+    //    "Awesome camping area on the mountains of New Jersey (Fake Data)",
+    //    "Cool mural in the City of New York (Fake Data)",
+    //    "Cool little hidden resturant (Fake Data)",]);
+    // })
 
-    test('delete post you added', async () => {
-    await deletePostYouAdded();
-    posts = await Post.findAll();
-    expect(posts.length).toBe(5);
-    })
+    // test('delete post you added', async () => {
+    // await deletePostYouAdded();
+    // posts = await Post.findAll();
+    // expect(posts.length).toBe(5);
+    // })
 
     test('Associate user okeson to posts', async () => {
         const user = await associateUserToPosts()
