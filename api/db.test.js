@@ -3,12 +3,12 @@ const { Post, Location, Media, Comment, User, Category } = db;
 const seed = require('./seed');
 
 const {
-  insertNewLocation,
-  insertNewPost,
-  getLocationWithId2,
-  getAllPosts,
-  getAllLocations,
-  deletePostYouAdded,
+//   insertNewLocation,
+//   insertNewPost,
+//   getLocationWithId2,
+//   getAllPosts,
+//   getAllLocations,
+//   deletePostYouAdded,
   associateUserToPosts,
   associateCommentToUserAndPost,
   associateCategoryToPost,

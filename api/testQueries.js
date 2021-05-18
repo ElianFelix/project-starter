@@ -168,12 +168,12 @@ async function getAssociationsToComment(){
 }
 
 module.exports = {
-  insertNewLocation,
-  insertNewPost,
-  getLocationWithId2,
-  getAllPosts,
-  getAllLocations,
-  deletePostYouAdded,
+//   insertNewLocation,
+//   insertNewPost,
+//   getLocationWithId2,
+//   getAllPosts,
+//   getAllLocations,
+//   deletePostYouAdded,
   associateUserToPosts,
   associateCommentToUserAndPost,
   associateCategoryToPost,
