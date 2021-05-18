@@ -32,7 +32,7 @@ const Locations = [
   },
   {
     state: "New York",
-    city: "Brooklyn",
+    city: "Manhattan",
     zipCode: 40110,
     lat: -8.7552,
     lng: 120.7106,
@@ -43,38 +43,40 @@ const Posts = [
   {
     body:
       "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
-    title: "Independence Day",
-    likes: 1996,
-    dislikes: 312,
+    title: "Awesome woods and creek in Brooklyn (Fake Data)",
+    likes: 1126,
+    dislikes: 122,
     locationId: 1,
   },
   {
     body: "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
-    title: "Men in Black II",
+    title: "Amazing place to see the sunset at Seattle (Fake Data)",
     likes: 2002,
     dislikes: 232,
     locationId: 3,
   },
   {
     body: "Integer aliquet, massa id lobortis convallis",
-    title: "Seven Pounds",
-    likes: 2008,
+    title: "Awesome camping area on the mountains of New Jersey (Fake Data)",
+    likes: 2782,
     dislikes: 301,
     locationId: 2,
+    fkUserName: "hpendry1"
   },
   {
     body: "Nullam sit amet turpis elementum ligula",
-    title: "Eagle Eye",
-    likes: 2008,
+    title: "Cool mural in the City of New York (Fake Data)",
+    likes: 5437,
     dislikes: 198,
     locationId: 5,
   },
   {
     body: "Morbi ut odio. Cras mi pede, malesuada in",
-    title: "Tropic Thunder",
-    likes: 2008,
-    dislikes: 1231,
+    title: "Cool little hidden resturant (Fake Data)",
+    likes: 1478,
+    dislikes: 146,
     locationId: 4,
+    fkUserName: "tlawtey2"
   },
 ];
 
