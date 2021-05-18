@@ -50,18 +50,18 @@ const Posts = [
     locationId: 1,
   },
   {
-    body: "Integer aliquet, massa id lobortis convallis",
-    title: "Awesome camping area on the mountains of New Jersey (Fake Data)",
-    likes: 2782,
-    dislikes: 301,
-    locationId: 2,
-  },
-  {
     body: "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
     title: "Amazing place to see the sunset at Seattle (Fake Data)",
     likes: 2002,
     dislikes: 232,
     locationId: 3,
+  },
+  {
+    body: "Integer aliquet, massa id lobortis convallis",
+    title: "Awesome camping area on the mountains of New Jersey (Fake Data)",
+    likes: 2782,
+    dislikes: 301,
+    locationId: 2,
   },
   {
     body: "Nullam sit amet turpis elementum ligula",
