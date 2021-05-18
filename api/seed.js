@@ -61,7 +61,6 @@ const Posts = [
     likes: 2782,
     dislikes: 301,
     locationId: 2,
-    fkUserName: "hpendry1"
   },
   {
     body: "Nullam sit amet turpis elementum ligula",
@@ -76,7 +75,6 @@ const Posts = [
     likes: 1478,
     dislikes: 146,
     locationId: 4,
-    fkUserName: "tlawtey2"
   },
 ];
 

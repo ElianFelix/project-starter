@@ -85,16 +85,21 @@ and return the user obj after association is done
 
 async function associateUserToPosts(){
     const user = await User.findByPk("okeson0")
-    console.log(user.userName)
+    const user2 = await User.findByPk("fsegebrecht4")
+    // console.log(user.userName)
     const posts = await Post.findAll({where: {id : {[Op.in] : [1,3,5]} } }) 
+    const posts2 = await Post.findAll({where: {id : {[Op.in] : [2,4]} } }) 
 
-    posts.forEach(post => {
-        console.log(post.title)
-    });
+
+    // posts.forEach(post => {
+    //     console.log(post.title)
+    // });
 
     await user.setPosts([...posts])
+    await user2.setPosts([...posts2])
 
     return user
+    
 }
 
 /*
