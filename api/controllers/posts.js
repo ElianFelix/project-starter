@@ -54,7 +54,7 @@ router.post('/', passport.isAuthenticated(), (req, res) => {
   Location.findOrCreate({where: {lat: parseFloat(content.lat), lng: parseFloat(content.lng)}, defaults: {state: content.state, city: content.city, zipCode: content.zip, streetAddress: content.streetAddress}})
           .then(([location, created]) =>{
             resArr.push(location)
-            return  Post.create({body: content.body, title: content.title, fkUserName: content.userName, likes: 0, dislikes: 0, locationId: location.id})    
+            return  Post.create({body: content.body, title: content.title, fkUserName: content.userName, likes: 0, dislikes: 0, locationId: location.id, fkUserName: content.user.userName})    
           })
           .then(post =>{
             resArr.push(post)
@@ -63,6 +63,7 @@ router.post('/', passport.isAuthenticated(), (req, res) => {
           .then(media =>{
             resArr.push(media)
             res.status(201).json(resArr);
+            
           })
           .catch(err => {
             res.status(400).json(err);

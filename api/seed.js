@@ -32,47 +32,55 @@ const Locations = [
   },
   {
     state: "New York",
-    city: "Brooklyn",
+    city: "Manhattan",
     zipCode: 40110,
     lat: -8.7552,
     lng: 120.7106,
   },
 ];
 
+
 const Posts = [
   {
-    body: "Checkout this cool area in Prospect Park. Enjoy!",
-    title: "Prospect Park",
-    likes: 1996,
-    dislikes: 312,
+
+    body:
+      "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
+    title: "Awesome woods and creek in Brooklyn (Fake Data)",
+    likes: 1126,
+    dislikes: 122,
     locationId: 1,
   },
   {
-    body: "I had an amazing time visiting the iconic Space Needle. Seeing the cist of Seattle from above was beathtaking",
-    title: "Space Needle",
+    body: "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+    title: "Amazing place to see the sunset at Seattle (Fake Data)",
     likes: 2002,
     dislikes: 232,
     locationId: 3,
   },
   {
-    body: "This science museum was a great learning experience. I would reccomend it to anyone staying in Jersey City",
-    title: "Liberty Science Center",
-    likes: 2008,
+
+    body: "Integer aliquet, massa id lobortis convallis",
+    title: "Awesome camping area on the mountains of New Jersey (Fake Data)",
+    likes: 2782,
+
     dislikes: 301,
     locationId: 2,
   },
   {
-    body: "Had a great time watching the NBA game and the area is nice with Atlantic Mall right next to it. A variety of shops in the area to spend a good time in the area",
-    title: "Barclays Center",
-    likes: 2008,
+
+    body: "Nullam sit amet turpis elementum ligula",
+    title: "Cool mural in the City of New York (Fake Data)",
+    likes: 5437,
+
     dislikes: 198,
     locationId: 5,
   },
   {
-    body: "Seeing a great peice of history was amazing! Washington Monument and other historical monuments near are all great things to see.",
-    title: "Lincoln Memorial",
-    likes: 2008,
-    dislikes: 1231,
+
+    body: "Morbi ut odio. Cras mi pede, malesuada in",
+    title: "Cool little hidden resturant (Fake Data)",
+    likes: 1478,
+    dislikes: 146,
     locationId: 4,
   },
 ];
