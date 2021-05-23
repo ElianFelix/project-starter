@@ -1,7 +1,6 @@
 import React from 'react';
-import Tag from '../components/Tag';
+//import Tag from '../components/Tag';
 import Helmet from 'react-helmet';
-import { Redirect } from 'react-router-dom';
 import auth from '../services/auth';
 import Loading from '../components/Loading';
 import Postcard from '../components/Postcard';
@@ -31,7 +30,7 @@ function ProfilePage(props) {
                 <div className="col-6 text-white">
                     <input type="file" accept="image/*" onChange={handleImageUpload} ref={imageUploader} style={{ display: "none" }} />
                     <div onClick={() => imageUploader.current.click()}>
-                        <img ref={uploadedImage} src={props.info.profilePic} className="profilePic" />
+                        <img ref={uploadedImage} src={props.info.profilePic} className="profilePic" alt="profile pic"/>
                     </div>
                 Click to upload profile picture
                 </div>
@@ -55,6 +54,7 @@ function ProfilePage(props) {
     );
 }
 
+/*
 function Tags(props) {
 
     return (
@@ -84,6 +84,7 @@ function Tags(props) {
         </div>
     )
 }
+*/
 
 class Profile extends React.Component {
     constructor(props) {
