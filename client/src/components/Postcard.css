@@ -1,11 +1,45 @@
 .post-img{
     width: 100%;
-    height: auto;
+    height: 500px;
 }
 
 .container-post{
     margin-top: 50px;
     height: auto;
+}
+
+.like-info{
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+
+.btn{
+    margin-right: 10px;
+}
+
+.post-loc{
+    border-bottom: 2px solid black ;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.post-text{
+    margin-top: 10px;
+}
+
+.city{
+    font-size: large;
+}
+
+.state{
+    font-style: italic;
+    font-size: large;
+}
+
+.post-title{
+    margin-top: 10px;
+    font-size: xx-large;
 }
 
 /*

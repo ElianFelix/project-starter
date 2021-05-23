@@ -6,7 +6,7 @@ function Tag(props) {
 
     return (
         <div class="container">
-            <img src={tag_img} className="resize"/>
+            <img src={tag_img} className="resize" alt="tag"/>
                 <div class="centered text-dark">{props.category}</div>
          </div>
     )

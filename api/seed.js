@@ -42,6 +42,7 @@ const Locations = [
 
 const Posts = [
   {
+
     body:
       "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
     title: "Awesome woods and creek in Brooklyn (Fake Data)",
@@ -57,20 +58,25 @@ const Posts = [
     locationId: 3,
   },
   {
+
     body: "Integer aliquet, massa id lobortis convallis",
     title: "Awesome camping area on the mountains of New Jersey (Fake Data)",
     likes: 2782,
+
     dislikes: 301,
     locationId: 2,
   },
   {
+
     body: "Nullam sit amet turpis elementum ligula",
     title: "Cool mural in the City of New York (Fake Data)",
     likes: 5437,
+
     dislikes: 198,
     locationId: 5,
   },
   {
+
     body: "Morbi ut odio. Cras mi pede, malesuada in",
     title: "Cool little hidden resturant (Fake Data)",
     likes: 1478,
@@ -81,10 +87,10 @@ const Posts = [
 
 const Medias = [
   { link: "https://firebasestorage.googleapis.com/v0/b/travelers-log.appspot.com/o/images%2F1018283_web1_web-outdoors.jpeg?alt=media&token=78979d56-0d4d-4b2a-88e5-83405a86e296", postId: 1 },
-  { link: "https://firebasestorage.googleapis.com/v0/b/travelers-log.appspot.com/o/images%2F117085_kings_park-1021x580.webp?alt=media&token=c6443315-dbef-4204-81e3-30f7c3a143df", postId: 3 },
-  { link: "https://firebasestorage.googleapis.com/v0/b/travelers-log.appspot.com/o/images%2F2_ALDR0430__1_.14.jpg?alt=media&token=67a6aa59-106b-4a74-b239-6f2531a5b45e", postId: 5 },
-  { link: "https://firebasestorage.googleapis.com/v0/b/travelers-log.appspot.com/o/images%2FColorado%20Outdoors.jpeg?alt=media&token=8f26e4b1-a1b3-49c6-a053-ef1b0d65d444", postId: 2 },
-  { link: "https://firebasestorage.googleapis.com/v0/b/travelers-log.appspot.com/o/images%2Fnew-york-city-cartoon-wall-mural-%5B2%5D-3171-p.jpeg?alt=media&token=043d96f0-c437-4d8f-a1ef-b203bbc451c9", postId: 4 }
+  { link: "https://firebasestorage.googleapis.com/v0/b/travelers-log.appspot.com/o/images%2F117085_kings_park-1021x580.webp?alt=media&token=c6443315-dbef-4204-81e3-30f7c3a143df", postId: 2 },
+  { link: "https://firebasestorage.googleapis.com/v0/b/travelers-log.appspot.com/o/images%2F2_ALDR0430__1_.14.jpg?alt=media&token=67a6aa59-106b-4a74-b239-6f2531a5b45e", postId: 3 },
+  { link: "https://firebasestorage.googleapis.com/v0/b/travelers-log.appspot.com/o/images%2FColorado%20Outdoors.jpeg?alt=media&token=8f26e4b1-a1b3-49c6-a053-ef1b0d65d444", postId: 4 },
+  { link: "https://firebasestorage.googleapis.com/v0/b/travelers-log.appspot.com/o/images%2Fnew-york-city-cartoon-wall-mural-%5B2%5D-3171-p.jpeg?alt=media&token=043d96f0-c437-4d8f-a1ef-b203bbc451c9", postId: 5 }
 ];
 
 const Users = [

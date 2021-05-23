@@ -1,5 +1,4 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
 import './Postcard.css'
 import auth from '../services/auth';
 
@@ -17,7 +16,8 @@ class Postcard extends React.Component{
   }
 
   handleClickLike(event, reqOp, id){
-     console.log(id);
+
+    console.log(auth.user);
     fetch('./api/posts/like/'+id, reqOp)
       .then(response => response.json())
       .then(data => {
@@ -29,12 +29,14 @@ class Postcard extends React.Component{
           dislike: newDislike
         })
       })
-      .catch(err => console.log(err));
+      .catch(err => alert("Unauthorized. Sign in to Like/Dislike."));
 
     
   }
 
   handleClickDislike(event, reqOp, id){
+
+    console.log(auth.user);
     fetch('./api/posts/dislike/'+id, reqOp)
       .then(response => response.json())
       .then(data => {
@@ -46,14 +48,14 @@ class Postcard extends React.Component{
           dislike: newDislike
         })
       })
-      .catch(err => console.log(err));
+      .catch(err => alert("Unauthorized. Sign in to Like/Dislike."));
   }
 
   componentDidMount(){
     const likes = this.props.post.likes;
     const dislikes = this.props.post.dislikes
-    console.log(likes);
-    console.log(dislikes);
+    //console.log(likes);
+    //console.log(dislikes);
     this.setState({
       like: likes,
       dislike: dislikes
@@ -79,30 +81,34 @@ class Postcard extends React.Component{
     };
 
     return (
-      <div className="container-post" style={{backgroundColor: "whitesmoke"}}>
+      <div className="container-post shadow" style={{backgroundColor: "whitesmoke"}}>
         <div className="row">
           <div className="col-8">
-            <img src={mediaLink} className="post-img"/>
+            <img src={mediaLink} className="post-img" alt="post cover"/>
           </div>
+
           <div className="col text-secondary">
-            <h4>{post.title}</h4>
+            <h4 className="post-title">{post.title}</h4>
             <div className="post-loc">
-              {location.city}, {location.state}
+              <span className="city">{location.city}</span>, <span className="state">{location.state}</span>
             </div>
             <div className="post-text">
               {post.body}
             </div>
           </div>
+
         </div>
 
-        <div className="row text-secondary align-items-center">
-          <div className="col-3 float-left">
+        <div className="row text-secondary like-info">
+          <div className="col-4 float-left">
+        
             <button type="button" class="btn btn-primary" onClick={ (e) => this.handleClickLike(e, requestOptions, post.id) } >Like</button>
-            : {likes}
+            {likes}
           </div>
-          <div className="col-3">
+          
+          <div className="col-4 float-left">
             <button type="button" class="btn btn-primary" onClick={ (e) => this.handleClickDislike(e, requestOptions, post.id) } >Dislike</button>
-            : {dislikes}
+            {dislikes}
           </div>
           <div className="col">
             <div>

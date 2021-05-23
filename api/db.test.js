@@ -32,6 +32,7 @@ describe('Testing the Models', () => {
     //     expect(posts.length).toBe(6);
     // })
     
+
     // test('get Location ID=2', async () => {
     // expect(await getLocationWithId2()).toEqual({state : "New Jersey", city : "Jersey City"});
     // })
@@ -49,6 +50,7 @@ describe('Testing the Models', () => {
     // posts = await Post.findAll();
     // expect(posts.length).toBe(5);
     // })
+
 
     test('Associate user okeson to posts', async () => {
         const user = await associateUserToPosts()
