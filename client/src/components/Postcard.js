@@ -72,7 +72,7 @@ class Postcard extends React.Component{
     const dislikes = this.state.dislike;
     //console.log(this.props.post);
     //console.log(mediaLink);
-    //console.log(location);
+    console.log(location);
     
     const requestOptions = {
       method: 'PUT',
@@ -100,16 +100,21 @@ class Postcard extends React.Component{
         </div>
 
         <div className="row text-secondary like-info">
-          <div className="col-4 float-left">
+          <div className="col-3 float-left">
         
             <button type="button" class="btn btn-primary" onClick={ (e) => this.handleClickLike(e, requestOptions, post.id) } >Like</button>
             {likes}
           </div>
           
-          <div className="col-4 float-left">
+          <div className="col-3 float-left">
             <button type="button" class="btn btn-primary" onClick={ (e) => this.handleClickDislike(e, requestOptions, post.id) } >Dislike</button>
             {dislikes}
           </div>
+
+          <div className="col float-left">
+          <a target="_blank" href={`https://www.google.com/maps/search/?api=1&query=${location.lat},${location.lng}`} ><button type="button" class="btn btn-primary">Directions</button></a>
+          </div>
+
           <div className="col">
             <div>
               Created By: {post.fkUserName}
