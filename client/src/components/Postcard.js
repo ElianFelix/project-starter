@@ -17,7 +17,7 @@ class Postcard extends React.Component{
 
   handleClickLike(event, reqOp, id){
 
-    console.log(auth.user);
+    // console.log(auth.user);
     fetch('./api/posts/like/'+id, reqOp)
       .then(response => response.json())
       .then(data => {
@@ -36,7 +36,7 @@ class Postcard extends React.Component{
 
   handleClickDislike(event, reqOp, id){
 
-    console.log(auth.user);
+    // console.log(auth.user);
     fetch('./api/posts/dislike/'+id, reqOp)
       .then(response => response.json())
       .then(data => {
@@ -72,7 +72,7 @@ class Postcard extends React.Component{
     const dislikes = this.state.dislike;
     //console.log(this.props.post);
     //console.log(mediaLink);
-    console.log(location);
+    // console.log(location);
     
     const requestOptions = {
       method: 'PUT',
