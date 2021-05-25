@@ -84,7 +84,7 @@ class App extends React.Component {
           <html className={NavBarCSS.APPhtml}/>
         </Helmet>
         <Navigation/>
-        <div className="container-fluid  text-center container">
+        <div className="container-fluid  text-center container-app">
           <div className="row justify-content-center">
             <Switch>
               <PrivateRoute path="/posts/new" component={CreatePost} />
