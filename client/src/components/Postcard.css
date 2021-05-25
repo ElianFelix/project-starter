@@ -2,6 +2,11 @@
     object-fit: cover;
     width: 100%;
     height: 500px;
+    padding:1px;
+    border:1px solid #021a40;
+    background-color:#750eeb;
+    box-shadow: 10px 10px 10px #999;
+
 }
 
 .container-post{
@@ -20,6 +25,7 @@
 
 .btn{
     margin-right: 10px;
+    background-color: #750eeb; 
 }
 
 .post-loc{
