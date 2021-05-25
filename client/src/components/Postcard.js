@@ -1,6 +1,7 @@
 import React from 'react';
 import './Postcard.css'
 import auth from '../services/auth';
+import { AspectRatio } from 'react-aspect-ratio';
 
 class Postcard extends React.Component{
 
@@ -83,8 +84,10 @@ class Postcard extends React.Component{
     return (
       <div className="container-post shadow" style={{backgroundColor: "whitesmoke"}}>
         <div className="row">
-          <div className="col-8">
+          <div className="col-8 ImgWrapper">
+            <AspectRatio ratio="21/9" style={{maxWidth:'auto'}}>
             <img src={mediaLink} className="post-img" alt="post cover"/>
+            </AspectRatio>
           </div>
 
           <div className="col text-secondary">
