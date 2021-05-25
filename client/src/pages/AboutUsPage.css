@@ -3,7 +3,7 @@
 .about-page{
     background-image: url('../nyc-wallpaper3.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     height: 100%;
     font-family: 'Numans', sans-serif;
 }
