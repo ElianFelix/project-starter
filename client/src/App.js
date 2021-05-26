@@ -49,7 +49,7 @@ function Navigation (){
     return (
       <nav className={`navbar navbar-expand-sm navbar-dark bg-dark shadow mb-3`}>
         <Applogo></Applogo>
-        <Link className={`navbar-brand nav-links  ${NavBarCSS.homeLink} ${NavBarCSS.anim_typewriter}`} to="/">Travelers Log</Link>
+        <Link className={`navbar-brand nav-links  ${NavBarCSS.homeLink} ${NavBarCSS.anim_typewriter}`} to="/">Traveler's Log</Link>
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             <NavLink className="nav-links" exact to="/posts/new">
