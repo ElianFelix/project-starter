@@ -104,11 +104,12 @@ class Profile extends React.Component {
     componentDidMount() {
         //const { id } = this.props.match.params;
 
-        console.log(this.state.userInfo);
+        // console.log(this.state.userInfo);
 
         fetch("./api/posts/getByUser/" + this.state.userInfo.userName)
             .then(res => res.json())
             .then(post => {
+                
                 console.log(post);
                 this.setState({
                     posts: post,
@@ -117,6 +118,7 @@ class Profile extends React.Component {
             })
             .catch(err => {
                 console.log(err);
+                this.setState({loading: false})
             });
     }
 

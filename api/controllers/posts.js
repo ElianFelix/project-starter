@@ -201,12 +201,15 @@ router.put('/dislike/:id', passport.isAuthenticated(), async (req, res) => {
 // in the following format [{"post": {post data}, "media": {media data}, "location": {location data}}]
 router.get('/getByUser/:userName', passport.isAuthenticated(), async (req,res) => {
   const  userName  = req.params.userName;
-  console.log(userName)
+  // console.log(userName)
   const user = await User.findByPk(userName);
-  console.log(user)
+  // console.log(user)
   // res.json(user)
   const posts = await user.getPosts();
   // const posts = await Post.findAll({where:{fkUserName : userName}});
+  if(posts.length === 0){
+    res.sendStatus(404);
+  }
 
   let postMedLocArr =[]
   for(let i=0; i<posts.length; i++){
